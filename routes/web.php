@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
 
 /*
@@ -21,6 +22,9 @@ Route::get('/', function () {
 Auth::routes();
 Route::middleware(['auth',])->group(function(){
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    //START OF COURSE
+    Route::get('/course', [CourseController::class, 'index'])->name('course');
 
 });
 
