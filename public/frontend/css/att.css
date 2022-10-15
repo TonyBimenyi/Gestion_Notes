@@ -1,0 +1,68 @@
+.att_body{
+    background-color: white;
+    /* margin: 15px 35px 10px 35px; */
+    width: 210mm;
+    height: 290mm;
+    padding: 10px;
+
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 1px rgba(7, 7, 7, 0.103);
+    transition: .7s;
+    margin: 0 auto;
+
+}
+
+.att_header{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 50px;
+}
+.att_header .logo i{
+    font-size: 70px;
+}
+.att_header .date p{
+    font-size: 15px;
+    margin-top: 30px;
+}
+.middle{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin: 20px 50px;
+
+
+}
+.middle p{
+    font-size: 15px;
+}
+.line hr{
+    background-color: var(--primary);
+    height: 1px;
+    width: 100%;
+    justify-content: center;
+}
+.title{
+
+    margin-top:20px;
+}
+.title p{
+    margin-top: -13px;
+    font-size: 17px;
+}
+.body p{
+    text-align:left;
+   margin: 10px 50px;
+   font-size: 15px;
+}
+img{
+    margin: 50px 50px;
+    height: 150px;
+}
+.signature p{
+    font-size: 13px;
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+}
+

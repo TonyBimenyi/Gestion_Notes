@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +19,9 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::middleware(['auth',])->group(function(){
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+});
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

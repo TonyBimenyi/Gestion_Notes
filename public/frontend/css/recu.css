@@ -1,0 +1,39 @@
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+button{
+    background-color:white;
+    border: none;
+    padding: 10px 20px;
+    color: black;
+    font-weight: bold;
+}
+.recu_container{
+    margin: 50px auto;
+    width: 70%;
+    background-color: white;
+    padding: 10px;
+}
+.recu_header{
+    display: flex;
+    justify-content: space-between;
+}
+.date p{
+    font-size: 15px;
+}
+.recu_body p{
+    text-align: left;
+    font-size: 15px;
+
+}
+.recu_body{
+    margin-top: 50px;
+}
+@media print{
+    .buttons{
+        display: none;
+    }
+}
