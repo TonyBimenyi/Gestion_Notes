@@ -42,16 +42,45 @@
         <div class="iocn-link">
           <a href="#">
             <i class="fa-solid fa-users"></i>
-            <span class="link_name">Utilisateurs</span>
+            <span class="link_name">Users</span>
           </a>
           <i class='bx bxs-chevron-down arrow' ></i>
         </div>
         <ul class="sub-menu">
-          <li><a class="link_name" href="#">Utilisateurs</a></li>
-          <li><a href="#">Admins</a></li>
-          <li><a href="#">Etudiants</a></li>
-          <li><a href="#">Enseignants</a></li>
-          <li><a href="#">Staff</a></li>
+          <li><a class="link_name" href="#">Users</a></li>
+          <li><a href="#">Teachers</a></li>
+          <li><a href="#">Students</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+          <i class="fa-solid fa-graduation-cap"></i>
+            <span class="link_name">Academic</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Academic</a></li>
+          <li><a href="#">Faculties</a></li>
+          <li><a href="#">Specialisations</a></li>
+        </ul>
+      </li>
+
+      
+
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+          <i class="fa-solid fa-book-open"></i>
+            <span class="link_name">Courses</span>
+          </a>
+          
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Courses</a></li>
+
         </ul>
       </li>
 
@@ -62,17 +91,16 @@
             <span class="link_name">Cours</span> --}}
 
           <a href="entree">
-            <i class='bx bx-line-chart' ></i>
-            <span class="link_name">Finances</span>
+          <i class="fa-solid fa-list"></i>
+            <span class="link_name">Notes</span>
           </a>
           <i class='bx bxs-chevron-down arrow' ></i>
         </div>
         <ul class="sub-menu">
-          <li><a class="link_name" href="#">Entrees</a></li>
-          <li><a href="#">Sorties</a></li>
-          <li><a href="#">Minervals</a></li>
-          <li><a href="#">Salaire</a></li>
-          <li><a href="#">Statistiques</a></li>
+          <li><a class="link_name" href="#">Notes</a></li>
+          <li><a href="#">View Notes</a></li>
+          <li><a href="#">Add Notes</a></li>
+        
         </ul>
       </li>
 
@@ -98,7 +126,7 @@
     <div class="home-content">
       <i class='bx bx-menu' ></i>
 
-      <span class="text">Systeme de Gestion</span>
+      <span class="text">Notes Management System</span>
 
     </div>
     @yield('da')
