@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\DashboardController;
 
 /*
@@ -25,6 +26,12 @@ Route::middleware(['auth',])->group(function(){
 
     //START OF COURSE
     Route::get('/course', [CourseController::class, 'index'])->name('course');
+
+    //END OF COURSE
+
+    //START STUDENT
+    Route::get('/students', [StudentController::class, 'index'])->name('student');
+    //END STUDENT
 
 });
 
