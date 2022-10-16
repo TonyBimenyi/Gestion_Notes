@@ -15,8 +15,9 @@
         @include('layouts.top_row.cour')
         <div class="form">
             <h3 style="margin:10px 35px;color:var(--primary)">Add a Course</h3>
-            <form action="" method="post">
+            <form action="{{ url('add_course') }}" method="post">
                 @csrf
+                {{-- @method('PUT')  --}}
                 <div class="col">
                     <div class="row">
                         <div class="input_row">
@@ -28,7 +29,7 @@
                                     <i class="fa-solid fa-list-ol"></i>
                                 </div>
                                 <div class="input">
-                                    <input type="text" placeholder="Code..." required>
+                                    <input type="text" name="code" placeholder="Code..." required>
                                 </div>
                             </div>
                         </div>
@@ -41,7 +42,7 @@
                                     <i class="fa-solid fa-file-signature"></i>
                                 </div>
                                 <div class="input">
-                                    <input type="text" placeholder="Name Course..." required>
+                                    <input type="text" name="namecourse" placeholder="Name Course..." required>
                                 </div>
                             </div>
                         </div>
@@ -54,10 +55,10 @@
                                     <i class="fa-solid fa-server"></i>
                                 </div>
                                 <div class="select">
-                                    <select name="" id="">
+                                    <select name="semester" id="">
                                         <option value="" >--Selected Semester---</option>
-                                        <option value="">1st Semestrer</option>
-                                        <option value="">2nd Semester</option>
+                                        <option value="semester1">1st Semestrer</option>
+                                        <option value="semester2">2nd Semester</option>
                                     </select>
                                 </div>
                             </div>
@@ -73,25 +74,25 @@
                                     <i class="fa-solid fa-school"></i>
                                 </div>
                                 <div class="select">
-                                    <select name="" id="">
+                                    <select name="class" id="">
                                         <option value="" disabled>--Select Class---</option>
-                                        <option value="">BAC I</option>
-                                        <option value="">BAC II</option>
-                                        <option value="">BAC III</option>
+                                        <option value="BacI">BAC I</option>
+                                        <option value="BacII">BAC II</option>
+                                        <option value="BacIII">BAC III</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
                         <div class="input_row">
                             <div class="labels">
-                                <label for="">Volume Horaire:</label>
+                                <label for="">Hourly Volume:</label>
                             </div>
                             <div class="input_group">
                                 <div class="icon">
                                     <i class="fa-solid fa-credit-card"></i>
                                 </div>
                                 <div class="input">
-                                    <input type="number" placeholder="Volume horaire..." required>
+                                    <input type="number" name="volume" placeholder="Hourly Volume..." required>
                                 </div>
                             </div>
                         </div>
@@ -106,8 +107,8 @@
                                 <div class="select">
                                     <select name="specialisation" id="state">
                                         <option value="" required >--La faculte d'abord---</option>
-                                        <option value="" required >Software Engineering</option>
-                                        <option value="" required >Telecommunication & Network </option>
+                                        <option value="1" required >Software Engineering</option>
+                                        <option value="2" required >Telecommunication & Network </option>
                                     </select>
                                 </div>
                             </div>
@@ -115,7 +116,7 @@
                     </div>
                 </div>
                 <div class="button">
-                    <button>ADD</button>
+                    <button type="submit">ADD</button>
                 </div>
             </form>
         </div>

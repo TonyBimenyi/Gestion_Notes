@@ -26,7 +26,9 @@ Route::middleware(['auth',])->group(function(){
 
     //START OF COURSE
     Route::get('/course', [CourseController::class, 'index'])->name('course');
-    Route::get('/create_course', [CourseController::class, 'add_course'])->name('createcourse');
+    Route::get('/create_course', [CourseController::class, 'list_course'])->name('createcourse');
+    Route::post('/add_course', [CourseController::class, 'add_course'])->name('addcourse');
+
 
     //END OF COURSE
 
