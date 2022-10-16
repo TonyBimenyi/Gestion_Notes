@@ -12,4 +12,9 @@ class StudentController extends Controller
         $students = Student::all();
         return view('students.students',['students'=>$students]);
     }
+    public function form_student()
+    {
+        # code...
+        return view('students.add_student');
+    }
 }

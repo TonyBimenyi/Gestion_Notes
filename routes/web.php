@@ -31,6 +31,7 @@ Route::middleware(['auth',])->group(function(){
 
     //START STUDENT
     Route::get('/students', [StudentController::class, 'index'])->name('students');
+    Route::get('/students/add', [StudentController::class, 'form_student'])->name('students.form');
     //END STUDENT
 
 });
