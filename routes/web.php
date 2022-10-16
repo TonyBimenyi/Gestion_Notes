@@ -30,7 +30,7 @@ Route::middleware(['auth',])->group(function(){
     //END OF COURSE
 
     //START STUDENT
-    Route::get('/students', [StudentController::class, 'index'])->name('student');
+    Route::get('/students', [StudentController::class, 'index'])->name('students');
     //END STUDENT
 
 });

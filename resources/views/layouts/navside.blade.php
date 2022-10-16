@@ -49,7 +49,7 @@
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Users</a></li>
           <li><a href="#">Teachers</a></li>
-          <li><a href="#">Students</a></li>
+          <li><a href="{{ route('students')}}">Students</a></li>
         </ul>
       </li>
 
