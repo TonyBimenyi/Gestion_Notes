@@ -10,4 +10,8 @@ class CourseController extends Controller
     {
         return view('course.course');
     }
+    public function add_course()
+    {
+        return view('course.create_course');
+    }
 }
