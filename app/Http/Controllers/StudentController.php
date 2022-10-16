@@ -17,7 +17,7 @@ class StudentController extends Controller
     {
         # code...
         $date = Carbon::now()->format('Y');
-        $count = Student::count();
+        $count = Student::count()+1;
 
         return view('students.add_student',['date'=>$date],['count'=>$count]);
     }

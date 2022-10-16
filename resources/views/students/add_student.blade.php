@@ -25,7 +25,7 @@
                                     <i class="fa-solid fa-user"></i>
                                 </div>
                                 <div class="input">
-                                    <input name="text" readonly="" value="MAT-{{$date}}/{{$count}}" required type="text" placeholder="Nom...">
+                                    <input name="text" readonly="" value="STU-{{$date}}/0{{$count}}" required type="text" placeholder="Nom...">
                                 </div>
                             </div>
                         </div>
