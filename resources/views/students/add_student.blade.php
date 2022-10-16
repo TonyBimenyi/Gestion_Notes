@@ -17,6 +17,7 @@
                     <div class="row">
                         <div class="input_row">
                             <div class="labels">
+                    
                                 <label for="">Matricule</label>
                             </div>
                             <div class="input_group">
@@ -24,7 +25,7 @@
                                     <i class="fa-solid fa-user"></i>
                                 </div>
                                 <div class="input">
-                                    <input name="nom" required type="text" placeholder="Nom...">
+                                    <input name="text" readonly="" value="MAT-{{$date}}/{{$count}}" required type="text" placeholder="Nom...">
                                 </div>
                             </div>
                         </div>
