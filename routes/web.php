@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\DashboardController;
-
+use App\Http\Controllers\FacultyController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,6 +36,11 @@ Route::middleware(['auth',])->group(function(){
     Route::get('/students', [StudentController::class, 'index'])->name('students');
     Route::get('/students/add', [StudentController::class, 'form_student'])->name('students.form');
     //END STUDENT
+
+    //START OF FACULTY
+    Route::get('/faculty', [FacultyController::class, 'index'])->name('faculty');
+    Route::get('/createfaculty', [FacultyController::class, 'form_faculty'])->name('createfaculty');
+    //END OF FACULTY
 
 });
 
