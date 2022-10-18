@@ -28,7 +28,7 @@ Route::middleware(['auth',])->group(function(){
     Route::get('/course', [CourseController::class, 'index'])->name('course');
     Route::get('/create_course', [CourseController::class, 'list_course'])->name('createcourse');
     Route::post('/add_course', [CourseController::class, 'add_course'])->name('addcourse');
-
+    Route::get('/edit_course/{id}', [CourseController::class, 'edit_Course'])->name('editcourse');
 
     //END OF COURSE
 
