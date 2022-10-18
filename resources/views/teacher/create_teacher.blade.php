@@ -12,54 +12,50 @@
 </head>
 <body>
     <div class="container">
-        @include('layouts.top_row.cour')
+        @include('layouts.top_row.tea')
         <div class="form">
-            <h3 style="margin:10px 35px;color:var(--primary)">Modify a Course</h3>
-            <form action="{{ url('update_course/'.$course->id) }}" method="post">
+            <h3 style="margin:10px 35px;color:var(--primary)">Add a Teacher</h3>
+            <form action="{{ url('add_teacher') }}" method="post">
                 @csrf
-                @method('PUT')
+                {{-- @method('PUT')  --}}
                 <div class="col">
                     <div class="row">
                         <div class="input_row">
                             <div class="labels">
-                                <label for="">Code: </label>
+                                <label for="">Matricule: </label>
                             </div>
                             <div class="input_group">
                                 <div class="icon">
                                     <i class="fa-solid fa-list-ol"></i>
                                 </div>
                                 <div class="input">
-                                    <input type="text" name="code" value="{{ $course->code }}" placeholder="Code..." required>
+                                    <input type="text" name="matricule" placeholder="matricule..." required>
                                 </div>
                             </div>
                         </div>
                         <div class="input_row">
                             <div class="labels">
-                                <label for="">Name of Course:  </label>
+                                <label for="">FirstName:</label>
                             </div>
                             <div class="input_group">
                                 <div class="icon">
-                                    <i class="fa-solid fa-file-signature"></i>
+                                    <i class="fa-solid fa-user"></i>
                                 </div>
                                 <div class="input">
-                                    <input type="text" name="namecourse" value="{{ $course->name }}" placeholder="Name Course..." required>
+                                    <input type="text" name="firstname" placeholder="Firstname...">
                                 </div>
                             </div>
                         </div>
                         <div class="input_row">
                             <div class="labels">
-                                <label for="">Semester</label>
+                                <label for="">LastName</label>
                             </div>
                             <div class="input_group">
                                 <div class="icon">
-                                    <i class="fa-solid fa-server"></i>
+                                    <i class="fa-solid fa-user"></i>
                                 </div>
-                                <div class="select">
-                                    <select name="semester" id="">
-                                        <option value="{{ $course->semester }}" >--Selected Semester---</option>
-                                        <option value="semester1">1st Semestrer</option>
-                                        <option value="semester2">2nd Semester</option>
-                                    </select>
+                                <div class="input">
+                                    <input type="text" name="lastname" placeholder="Lastname...">
                                 </div>
                             </div>
                         </div>
@@ -67,49 +63,48 @@
                     <div class="row">
                         <div class="input_row">
                             <div class="labels">
-                                <label for="">Class:</label>
+                                <label for="">Sex: </label>
                             </div>
                             <div class="input_group">
                                 <div class="icon">
-                                    <i class="fa-solid fa-school"></i>
+                                    <i class="fa-solid fa-mars-and-venus"></i>
                                 </div>
                                 <div class="select">
-                                    <select name="class" id="">
-                                        <option value="{{ $course->class }}" disabled>--Select Class---</option>
-                                        <option value="BacI">BAC I</option>
-                                        <option value="BacII">BAC II</option>
-                                        <option value="BacIII">BAC III</option>
+                                    <select name="sex" id="">
+                                        <option value="" disabled>--Sexe---</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
                         <div class="input_row">
                             <div class="labels">
-                                <label for="">Hourly Volume:</label>
+                                <label for="">Email</label>
                             </div>
                             <div class="input_group">
                                 <div class="icon">
-                                    <i class="fa-solid fa-credit-card"></i>
+                                    <i class="fa-solid fa-envelope"></i>
                                 </div>
                                 <div class="input">
-                                    <input type="number" name="volume" value="{{ $course->vh }}" placeholder="Hourly Volume..." required>
+                                    <input type="email" name="mail" placeholder="exemple@biu.bi">
                                 </div>
                             </div>
                         </div>
                         <div class="input_row">
                             <div class="labels">
-                                <label for="">Specialisation</label>
+                                <label for="">Course</label>
                             </div>
                             <div class="input_group">
                                 <div class="icon">
                                     <i class="fa-solid fa-book"></i>
                                 </div>
                                 <div class="select">
-                                    <select name="specialisation" id="state">
-                                        <option value="" required >--Specialisation---</option>
-                                        @foreach ($specs as $spec)
+                                    <select name="course" id="state">
+                                        <option value="" required >--Course---</option>
+                                        @foreach ($create_teacher as $course)
                                             
-                                        <option value="{{ $spec->id }}" required >{{ $spec->name }}</option>
+                                        <option value="{{ $course->id }}" required >{{ $course->name }}</option>
 
                                         @endforeach
                                         
@@ -121,7 +116,7 @@
                     </div>
                 </div>
                 <div class="button">
-                    <button type="submit">UPDATE</button>
+                    <button type="submit">ADD</button>
                 </div>
             </form>
         </div>

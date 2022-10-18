@@ -16,4 +16,8 @@ class Specialisation extends Model
     public function students(){
         return $this->hasMany(Student::class,'id','id_spec');
     }
+
+    public function course(){
+        return $this->hasMany(Course::class,'id','id_spec');
+    }
 }
