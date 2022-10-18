@@ -43,6 +43,7 @@ Route::middleware(['auth',])->group(function(){
     //START OF TEACHER
     Route::get('/teacher', [TeacherController::class, 'index'])->name('teacher');
     Route::get('/createteacher', [TeacherController::class, 'list_teacher'])->name('createteacher');
+    Route::post('/add_teacher', [TeacherController::class, 'insertTeacher'])->name('addteacher');
 
     //END OF TEACHER
 
