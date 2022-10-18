@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\DashboardController;
 
 /*
@@ -38,6 +39,12 @@ Route::middleware(['auth',])->group(function(){
     Route::get('/students', [StudentController::class, 'index'])->name('students');
     Route::get('/students/add', [StudentController::class, 'form_student'])->name('students.form');
     //END STUDENT
+
+    //START OF TEACHER
+    Route::get('/teacher', [TeacherController::class, 'index'])->name('teacher');
+    Route::get('/createteacher', [TeacherController::class, 'list_teacher'])->name('createteacher');
+
+    //END OF TEACHER
 
 });
 
