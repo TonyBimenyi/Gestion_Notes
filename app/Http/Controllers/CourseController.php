@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use Illuminate\Http\Request;
 use App\Models\Specialisation;
+use Illuminate\Support\Facades\DB;
 
 class CourseController extends Controller
 {
@@ -36,10 +37,33 @@ class CourseController extends Controller
     }
     public function edit_Course($id)
     {
-        $course=Course::findOrFail($id);
-        
-        // $specs = Specialisation::get();
+        //$courses=Course::findOrFail($id);
+         $course=Course::where('id',$id)->first();
+         $specs = Specialisation::get();
 
-        return view('course.edit_course',['list_course'=>$course]);
+
+        return view('course.edit_course',['course'=>$course],['specs'=>$specs]);
+    }
+    
+    public function update_course(Request $request,$id)
+    {
+        $course=DB::table('courses')
+        ->where('id',$id)
+        ->update(['code'=>$request->input('code'),
+                    'name'=>$request->input('namecourse'),
+                    'semester'=>$request->input('semester'),
+                    'class'=>$request->input('class'),
+                    'vh'=>$request->input('volume'),
+                    'id_spec'=>$request->input('specialisation')
+                    ]
+    );
+    return redirect('course')->with('alert',"Course has been Updated!");
+    }
+
+    public function delete_course($id)
+    {
+        $course=Course::where('id',$id)->delete();
+
+        return redirect('course')->with('alert',"Course has been Deleted!");
     }
 }
