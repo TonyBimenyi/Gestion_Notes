@@ -34,14 +34,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <td>1</td>
-                    <td>sjhdjsdhsd</td>
-                    <td>ahajeha</td>
-                    <td>aknsjasn</td>
-                    <td>ajshjashjh</td>
-                    <td>asjajia</td>
-                    <td id="btn"> <button  class="edit"><i class="fa-solid fa-pen-to-square"></i> Modifier</button></td>
-                    <td> <button  id="delete"><i class="fa-solid fa-trash-can"></i> Supprimer</button></td>
+                    @foreach ($course as $cours)   
+                   
+                    <tr>
+                        <td>{{ $cours->code }}</td>
+                        <td>{{ $cours->name }}</td>
+                        <td>{{ $cours->semester }}</td>
+                        <td>{{ $cours->class }}</td>
+                        <td>{{ $cours->vh }}</td>
+                        <td>{{ $cours->id_spec }}</td>
+                        <td id="btn"> <button  class="edit"><i class="fa-solid fa-pen-to-square"></i> Modifier</button></td>
+                        <td> <button  id="delete"><i class="fa-solid fa-trash-can"></i> Supprimer</button></td>
+                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

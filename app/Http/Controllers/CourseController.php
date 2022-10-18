@@ -10,7 +10,9 @@ class CourseController extends Controller
 {
     public function index()
     {
-        return view('course.course');
+        $course = Course::all();
+
+        return view('course.course',['course'=>$course]);
     }
     public function list_course()
     {
