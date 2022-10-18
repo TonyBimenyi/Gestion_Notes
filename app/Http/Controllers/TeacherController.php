@@ -36,4 +36,12 @@ class TeacherController extends Controller
 
         return redirect('teacher')->with('alert', 'Teacher added successfully!');
     }
+    public function edit_teacher($id)
+    {
+        $teacher=Teacher::where('id',$id)->first();
+         $course = Course::get();
+
+
+        return view('teacher.edit_teacher',['teacher'=>$teacher],['course'=>$course]);
+    }
 }
