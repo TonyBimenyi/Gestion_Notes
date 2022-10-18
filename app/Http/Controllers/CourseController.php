@@ -11,16 +11,18 @@ class CourseController extends Controller
     public function index()
     {
         $course = Course::all();
+        $specs = Specialisation::get();
 
         return view('course.course',['course'=>$course]);
     }
     public function list_course()
     {
-        return view('course.create_course');
+        $specs = Specialisation::get();
+
+        return view('course.create_course',['create_course'=>$specs]);
     }
     public function add_course(Request $request)
     {
-        $specs = new Specialisation();
         $course = new Course();
         $course->code=$request->input('code');
         $course->name=$request->input('namecourse');
@@ -30,6 +32,14 @@ class CourseController extends Controller
         $course->id_spec=$request->input('specialisation');
         $course->save();
 
-        return redirect('course.create_course')->with('alert', 'Course added successfully!');
+        return redirect('create_course')->with('alert', 'Course added successfully!');
+    }
+    public function edit_Course($id)
+    {
+        $course=Course::findOrFail($id);
+        
+        // $specs = Specialisation::get();
+
+        return view('course.edit_course',['list_course'=>$course]);
     }
 }

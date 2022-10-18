@@ -14,10 +14,10 @@
     <div class="container">
         @include('layouts.top_row.cour')
         <div class="form">
-            <h3 style="margin:10px 35px;color:var(--primary)">Add a Course</h3>
-            <form action="{{ url('add_course') }}" method="post">
+            <h3 style="margin:10px 35px;color:var(--primary)">Modify a Course</h3>
+            <form action="{{ url('edit_course/'.$course->id) }}" method="post">
                 @csrf
-                {{-- @method('PUT')  --}}
+                @method('PUT')
                 <div class="col">
                     <div class="row">
                         <div class="input_row">
@@ -29,7 +29,7 @@
                                     <i class="fa-solid fa-list-ol"></i>
                                 </div>
                                 <div class="input">
-                                    <input type="text" name="code" placeholder="Code..." required>
+                                    <input type="text" name="code" value="{{ $course->code }}" placeholder="Code..." required>
                                 </div>
                             </div>
                         </div>
@@ -42,7 +42,7 @@
                                     <i class="fa-solid fa-file-signature"></i>
                                 </div>
                                 <div class="input">
-                                    <input type="text" name="namecourse" placeholder="Name Course..." required>
+                                    <input type="text" name="namecourse" value="{{ $course->name }}" placeholder="Name Course..." required>
                                 </div>
                             </div>
                         </div>
@@ -56,7 +56,7 @@
                                 </div>
                                 <div class="select">
                                     <select name="semester" id="">
-                                        <option value="" >--Selected Semester---</option>
+                                        <option value="{{ $course->semester }}" >--Selected Semester---</option>
                                         <option value="semester1">1st Semestrer</option>
                                         <option value="semester2">2nd Semester</option>
                                     </select>
@@ -75,7 +75,7 @@
                                 </div>
                                 <div class="select">
                                     <select name="class" id="">
-                                        <option value="" disabled>--Select Class---</option>
+                                        <option value="{{ $course->class }}" disabled>--Select Class---</option>
                                         <option value="BacI">BAC I</option>
                                         <option value="BacII">BAC II</option>
                                         <option value="BacIII">BAC III</option>
@@ -92,7 +92,7 @@
                                     <i class="fa-solid fa-credit-card"></i>
                                 </div>
                                 <div class="input">
-                                    <input type="number" name="volume" placeholder="Hourly Volume..." required>
+                                    <input type="number" name="volume" value="{{ $course->vh }}" placeholder="Hourly Volume..." required>
                                 </div>
                             </div>
                         </div>
@@ -121,7 +121,7 @@
                     </div>
                 </div>
                 <div class="button">
-                    <button type="submit">ADD</button>
+                    <button type="submit">UPDATE</button>
                 </div>
             </form>
         </div>
