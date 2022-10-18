@@ -12,6 +12,6 @@ class Student extends Model
     protected $fillable = ['matricule','fname','lname','sexe','email','class','spec_id'];
 
     public function specialisation(){
-        return $this->belongsTo(Specialisation::class);
+        return $this->belongsTo(related:Specialisation::class,foreignKey:'spec_id');
     }
 }

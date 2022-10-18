@@ -12,7 +12,8 @@ class Specialisation extends Model
     use HasFactory;
     protected $fillable = ['name','id_fac'];
     
+    //on specialisation has many students
     public function students(){
-        return $this->hasOne(Student::class);
+        return $this->hasMany(Student::class,'id','id_spec');
     }
 }
