@@ -9,9 +9,10 @@
 <div class="container">
     @include('layouts.top_row.students')
     <div class="form">
-            <h3 style="margin:10px 35px;color:var(--primary)">Add New Student</h3>
-            <form action="{{ url('students/create') }}" method="POST">
+            <h3 style="margin:10px 35px;color:var(--primary)">Update Student</h3>
+            <form action="{{ route('students.update',['id' => $student->id])}}" method="post">
                 @csrf
+                @method('PUT')
                 
                 <div class="col">
                     <div class="row">
@@ -25,7 +26,7 @@
                                     <i class="fa-solid fa-user"></i>
                                 </div>
                                 <div class="input">
-                                    <input name="matricule"  readonly="" value="STU-{{$date}}/0{{$count}}" required type="text" placeholder="Nom...">
+                                    <input name="matricule"  readonly="" value="{{$student->matricule}}" required type="text" placeholder="Nom...">
                                 </div>
                             </div>
                         </div>
@@ -39,7 +40,7 @@
                                         <i class="fa-solid fa-user"></i>
                                     </div>
                                     <div class="input">
-                                        <input name="fname" required type="text" placeholder="First Name...">
+                                        <input name="fname" value="{{$student->fname}}" required type="text" placeholder="First Name...">
                                     </div>
                                 </div>
                          </div>
@@ -53,7 +54,7 @@
                                     <i class="fa-solid fa-user"></i>
                                 </div>
                                 <div class="input">
-                                    <input name="lname" required type="text" placeholder="Last Name...">
+                                    <input name="lname" value="{{$student->lname}}" required type="text" placeholder="Last Name...">
                                 </div>
                             </div>
                         </div>
@@ -67,7 +68,7 @@
                                     <i class="fa-solid fa-mars-and-venus"></i>
                                 </div>
                                 <div class="select">
-                                    <select name="sexe" required id="">
+                                    <select  name="sexe" required id="">
                                         <option value="" disabled>--Selection le sexe---</option>
                                         <option value="Man">Man</option>
                                         <option value="Woman">Woman</option>
@@ -90,7 +91,7 @@
                                 <i class="fa-solid fa-envelope"></i>
                             </div>
                             <div class="input">
-                                <input name="email" required type="email" placeholder="exemple@biu.bi">
+                                <input name="email" value="{{$student->email}}"  required type="email" placeholder="exemple@biu.bi">
                             </div>
                         </div>
                     </div>
@@ -104,7 +105,7 @@
                                         <i class="fa-solid fa-book"></i>
                                     </div>
                                     <div class="select">
-                                        <select required class="fac" name="faculte" id="faculty">
+                                        <select required  class="fac" name="faculte" id="faculty">
                                             <option value="" selected="true" disabled="true">--Selectionner la faculte---</option>
                                             @foreach ($faculties as $fac)
                                                 <option value="{{ $fac->id }}">{{ $fac->name }}</option>
@@ -125,8 +126,8 @@
                                         <i class="fa-solid fa-book"></i>
                                     </div>
                                     <div class="select">
-                                        <select name="spec" id="spec">
-                                            <option value="" required disabled>--La faculte d'abord---</option>
+                                        <select  name="spec" id="spec">
+                                            <option value="" required disabled>{{$student->specialisation->name}}</option>
 
                                         </select>
                                     </div>
@@ -144,8 +145,8 @@
                                         <i class="fa-solid fa-calendar-days"></i>
                                     </div>
                                     <div class="select">
-                                        <select required name="class" id="">
-                                            <option value="" selected="true" disabled>--Select Class---</option>
+                                        <select  required name="class" id="">
+                                            <option value="" selected="true" disabled>{{$student->class}}</option>
                                             <option value="BAC I">BAC I</option>
                                             <option value="BAC II">BAC II</option>
                                             <option value="BAC III">BAC III</option>
@@ -157,7 +158,7 @@
                         </div>
                     </div>
                         <div class="button">
-                            <button>Add</button>
+                            <button>Update</button>
                         </div>
                     </div>
                 </div>
