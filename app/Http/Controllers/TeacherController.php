@@ -47,7 +47,7 @@ class TeacherController extends Controller
     }
     public function update_teacher(Request $request,$id)
     {
-        $teacher=DB::table('teacher')
+        $teacher=DB::table('teachers')
         ->where('id',$id)
         ->update(['matricule'=>$request->input('matricule'),
                     'fname'=>$request->input('firstname'),
