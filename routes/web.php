@@ -51,6 +51,8 @@ Route::middleware(['auth',])->group(function(){
     Route::get('/createteacher', [TeacherController::class, 'list_teacher'])->name('createteacher');
     Route::post('/add_teacher', [TeacherController::class, 'insertTeacher'])->name('addteacher');
     Route::get('/edit_teacher/{id}', [TeacherController::class, 'edit_teacher'])->name('editteacher');
+    Route::put('/update_teacher/{id}', [TeacherController::class, 'update_teacher'])->name('updateteacher');
+    Route::get('/delete_teacher/{id}', [TeacherController::class, 'delete'])->name('deleteteacher');
 
     //END OF TEACHER
 >>>>>>> 257da6b119f6636708c1653743485cb109b96b68

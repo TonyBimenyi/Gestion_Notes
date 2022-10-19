@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TeacherController extends Controller
 {
@@ -43,5 +44,25 @@ class TeacherController extends Controller
 
 
         return view('teacher.edit_teacher',['teacher'=>$teacher],['course'=>$course]);
+    }
+    public function update_teacher(Request $request,$id)
+    {
+        $teacher=DB::table('teachers')
+        ->where('id',$id)
+        ->update(['matricule'=>$request->input('matricule'),
+                    'fname'=>$request->input('firstname'),
+                    'lname'=>$request->input('lastname'),
+                    'sexe'=>$request->input('sex'),
+                    'email'=>$request->input('mail'),
+                    'ic_course'=>$request->input('course')
+                    ]
+    );
+    return redirect('teacher')->with('alert',"Teacher has been Updated!");
+    }
+    public function delete($id)
+    {
+        $teacher=Teacher::where('id',$id)->delete();
+
+        return redirect('teacher')->with('alert',"Teacher has been Deleted!");
     }
 }
