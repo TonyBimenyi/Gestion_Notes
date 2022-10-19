@@ -38,14 +38,19 @@ Route::middleware(['auth',])->group(function(){
     //START STUDENT
     Route::get('/students', [StudentController::class, 'index'])->name('students');
     Route::get('/students/add', [StudentController::class, 'form_student'])->name('students.form');
+    
     //END STUDENT
 
-<<<<<<< HEAD
+
     //START OF FACULTY
     Route::get('/faculty', [FacultyController::class, 'index'])->name('faculty');
-    Route::get('/createfaculty', [FacultyController::class, 'form_faculty'])->name('createfaculty');
+    Route::get('/createfaculty', [FacultyController::class, 'list_faculty'])->name('createfaculty');
+    Route::post('/add_faculty', [FacultyController::class, 'add_faculty'])->name('add_faculty');
+    Route::get('/edit_faculty/{id}', [FacultyController::class, 'edit_faculty'])->name('edit_faculty');
+    Route::put('/update_faculty/{id}', [FacultyController::class, 'update_faculty'])->name('update_faculty');
+    Route::get('/delete_faculty/{id}', [FacultyController::class, 'delete_faculty'])->name('delete_faculty');
     //END OF FACULTY
-=======
+
     //START OF TEACHER
     Route::get('/teacher', [TeacherController::class, 'index'])->name('teacher');
     Route::get('/createteacher', [TeacherController::class, 'list_teacher'])->name('createteacher');
@@ -55,7 +60,7 @@ Route::middleware(['auth',])->group(function(){
     Route::get('/delete_teacher/{id}', [TeacherController::class, 'delete'])->name('deleteteacher');
 
     //END OF TEACHER
->>>>>>> 257da6b119f6636708c1653743485cb109b96b68
+
 
 });
 
