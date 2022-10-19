@@ -36,7 +36,7 @@
                     <tr>
                         <td>{{ $spec->id }}</td>
                         <td>{{ $spec->name }}</td>
-                        <td>{{ $spec->id_fac }}</td>
+                        <td>{{ $spec->faculty-> name }}</td>
                         <td id="btn"><a href="{{ url('edit_specialization/'.$spec->id) }}"> <button  class="edit"><i class="fa-solid fa-pen-to-square"></i> Modifier</button></a></td>
                         <td><a href="{{ url('delete_specialization/'.$spec->id) }}"> <button  id="delete"><i class="fa-solid fa-trash-can"></i> Supprimer</button></a></td>
                     </tr>

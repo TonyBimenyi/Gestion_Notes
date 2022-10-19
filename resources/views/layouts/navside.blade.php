@@ -64,7 +64,7 @@
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Academic</a></li>
           <li><a href="{{ route('faculty')}}">Faculties</a></li>
-          <li><a href="">Specialisations</a></li>
+          <li><a href="{{ route('specialisation')}}">Specialisations</a></li>
         </ul>
       </li>
 

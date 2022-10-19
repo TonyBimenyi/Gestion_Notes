@@ -20,4 +20,8 @@ class Specialisation extends Model
     public function courses(){
         return $this->hasMany(Course::class,'id','id_spec');
     }
+
+    public function faculty(){
+        return $this->belongsTo(related:Faculty::class,foreignKey:'id_fac');
+    }
 }
