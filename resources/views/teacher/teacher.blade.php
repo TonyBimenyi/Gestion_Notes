@@ -43,9 +43,9 @@
                         <td>{{ $teach->lname }}</td>
                         <td>{{ $teach->sexe }}</td>
                         <td>{{ $teach->email}}</td>
-                        <td>{{ $teach->ic_course }}</td>
-                        <td id="btn"><a href="{{ url('edit_teacher/'.$teach->id) }}"> <button  class="edit"><i class="fa-solid fa-pen-to-square"></i> Modifier</button></a></td>
-                        <td><a href="{{ url('delete_teacher/'.$teach->id) }}"> <button  id="delete"><i class="fa-solid fa-trash-can"></i> Supprimer</button></a></td>
+                        <td>{{ $teach->courses->name }}</td>
+                        <td id="btn"><a href="{{ url('edit_teacher/'.$teach->id) }}"> <button  class="edit"><i class="fa-solid fa-pen-to-square"></i> Edit</button></a></td>
+                        <td><a href="{{ url('delete_teacher/'.$teach->id) }}"> <button  id="delete"><i class="fa-solid fa-trash-can"></i> Delete</button></a></td>
                     </tr>
                     @endforeach
                 </tbody>

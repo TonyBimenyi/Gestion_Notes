@@ -44,9 +44,9 @@
                         <td>{{ $cours->semester }}</td>
                         <td>{{ $cours->class }}</td>
                         <td>{{ $cours->vh }}</td>
-                        <td>{{ $cours->id_spec }}</td>
-                        <td id="btn"><a href="{{ url('edit_course/'.$cours->id) }}"> <button  class="edit"><i class="fa-solid fa-pen-to-square"></i> Modifier</button></a></td>
-                        <td><a href="{{ url('delete_course/'.$cours->id) }}"> <button  id="delete"><i class="fa-solid fa-trash-can"></i> Supprimer</button></a></td>
+                        <td>{{ $cours->specialisation->name }}</td>
+                        <td id="btn"><a href="{{ url('edit_course/'.$cours->id) }}"> <button  class="edit"><i class="fa-solid fa-pen-to-square"></i> Edit</button></a></td>
+                        <td><a href="{{ url('delete_course/'.$cours->id) }}"> <button  id="delete"><i class="fa-solid fa-trash-can"></i> Delete</button></a></td>
                     </tr>
                     @endforeach
                 </tbody>

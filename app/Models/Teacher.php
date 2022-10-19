@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Teacher extends Model
 {
     use HasFactory;
+    protected $fillable = ['matricule','fname','lname','sexe','email','ic_course'];
 
     public function courses()
     {
-        return $this->hasMany(Course::class);
+        return $this->belongsTo(related:Course::class,foreignKey:'ic_course');
     }
 }

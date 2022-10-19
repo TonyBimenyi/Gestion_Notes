@@ -12,7 +12,7 @@ class Course extends Model
     
     protected $table='courses';
 
-    public function Specialisation(){
-        return $this->HasMany();
+    public function specialisation(){
+        return $this->belongsTo(related:Specialisation::class,foreignKey:'id_spec');
     }
 }
