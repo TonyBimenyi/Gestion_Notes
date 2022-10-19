@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Course;
 use Illuminate\Http\Request;
 use App\Models\Specialisation;
@@ -18,9 +19,12 @@ class CourseController extends Controller
     }
     public function list_course()
     {
+        $date = Carbon::now()->format('Y');
+        $count = Course::count()+1;
         $specs = Specialisation::get();
 
-        return view('course.create_course',['create_course'=>$specs]);
+        // return view('course.create_course',['create_course'=>$specs],['date'=>$date],['count'=>$count]);
+        return view('course.create_course',compact('specs','date','count'));
     }
     public function add_course(Request $request)
     {

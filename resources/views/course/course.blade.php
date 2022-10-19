@@ -17,7 +17,8 @@
                 <input type="search" placeholder="Rechercher...">
             </div>
         </div>
-
+        @if ($course->count()>0)
+            
         <div class="table_list">
             <table>
                 <thead>
@@ -51,6 +52,10 @@
                 </tbody>
             </table>
         </div>
+        @else
+
+        <span><h1>No Record Saved</h1></span>
+        @endif
     </div>
     </div>
 </div>
