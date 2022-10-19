@@ -35,7 +35,7 @@
           <span class="link_name">Dashboard</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name"  href="#">Dashboard</a></li>
+          <li><a class="link_name"  href="{{ route('dashboard') }}">Dashboard</a></li>
         </ul>
       </li>
       <li>

@@ -29,25 +29,25 @@
             <div class="overview">
                 <div class="title">
                     <i class="uil uil-tachometer-fast-alt"></i>
-                    <span class="text">Tableau de Bord</span>
+                    <span class="text">Dashboard</span>
                 </div>
 
                 <div class="boxes">
                     <div class="box box3">
                         <i class="fa-solid fa-graduation-cap"></i>
-                        <span class="text">Total des etudiants</span>
-                        <span class="number">54</span>
+                        <span class="text">Total of Student</span>
+                        <span class="number">{{ $count_student }}</span>
                     </div>
                     <div class="box box1">
 
-                        <i class="fa-solid fa-right-from-bracket"></i>
-                        <span class="text">Depenses</span>
-                        <span class="number">1111111 Fbu</span>
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                        <span class="text">Total of Teacher</span>
+                        <span class="number">{{ $count_teacher }}</span>
                     </div>
                     <div class="box box2">
-                        <i class="fa-solid fa-right-to-bracket"></i>
-                        <span class="text">Revenus</span>
-                        <span class="number">1222 Fbu</span>
+                        <i class="fa-solid fa-person-chalkboard"></i>
+                        <span class="text">Total of Course</span>
+                        <span class="number">{{ $count_course }}</span>
                     </div>
 
                 </div>
@@ -56,26 +56,24 @@
             <div class="activity">
                 <div class="title">
                     <i class="uil uil-clock-three"></i>
-                    <span class="text">Dernieres paiements des minervals</span>
+                    <span class="text">List Of Faculty</span>
                 </div>
 
                 <div class="activity-data">
                     <div class="data names">
-                            <span class="data-title">Nom et Prenom</span>
+                            <span class="data-title">#ID</span>
+                            @foreach ($faculty as $fac )
+                            <h3>{{ $fac->id }}</h3> 
+                            @endforeach
                         
                     </div>
                     <div class="data email">
-                        <span class="data-title">Email</span>
-                        
+                        <span class="data-title">NAME FACULTY</span>
+                        @foreach ($faculty as $fac )
+                        <h3>{{ $fac->name }}</h3> 
+                        @endforeach
                     </div>
-                    <div class="data joined">
-                        <span class="data-title">Date</span>
-                       
-                    </div>
-                    <div class="data type">
-                        <span class="data-title">Tranche</span>
-                        
-                    </div>
+                   
 
                 </div>
             </div>
