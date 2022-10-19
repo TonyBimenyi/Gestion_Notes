@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\DashboardController;
-
+use App\Http\Controllers\FacultyController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,12 +27,18 @@ Route::middleware(['auth',])->group(function(){
 
     //START OF COURSE
     Route::get('/course', [CourseController::class, 'index'])->name('course');
+    Route::get('/create_course', [CourseController::class, 'list_course'])->name('createcourse');
+    Route::post('/add_course', [CourseController::class, 'add_course'])->name('addcourse');
+    Route::get('/edit_course/{id}', [CourseController::class, 'edit_Course'])->name('editcourse');
+    Route::put('/update_course/{id}', [CourseController::class, 'update_course'])->name('updatecourse');
+    Route::get('/delete_course/{id}', [CourseController::class, 'delete_course'])->name('deletecourse');
 
     //END OF COURSE
 
     //START STUDENT
     Route::get('/students', [StudentController::class, 'index'])->name('students');
     Route::get('/students/add', [StudentController::class, 'form_student'])->name('students.form');
+
     Route::post('/getSpec',[StudentController::class,'getSpec'])->name('students.getSpec');
     Route::get('/getFac',[StudentController::class,'getFac'])->name('students.getFac');
     Route::post('/students/create',[StudentController::class,'create_student'])->name('students.create');
@@ -39,7 +46,30 @@ Route::middleware(['auth',])->group(function(){
     Route::put('/students/update/{id}',[StudentController::class,'update_student'])->name('students.update');
     Route::get('/students/delete_student/{id}',[StudentController::class,'delete_student'])->name('students.delete_student');
     Route::post('/students/remove_student/{id}',[StudentController::class,'remove_student'])->name('students.remove');
+
+
     //END STUDENT
+
+
+    //START OF FACULTY
+    Route::get('/faculty', [FacultyController::class, 'index'])->name('faculty');
+    Route::get('/createfaculty', [FacultyController::class, 'list_faculty'])->name('createfaculty');
+    Route::post('/add_faculty', [FacultyController::class, 'add_faculty'])->name('add_faculty');
+    Route::get('/edit_faculty/{id}', [FacultyController::class, 'edit_faculty'])->name('edit_faculty');
+    Route::put('/update_faculty/{id}', [FacultyController::class, 'update_faculty'])->name('update_faculty');
+    Route::get('/delete_faculty/{id}', [FacultyController::class, 'delete_faculty'])->name('delete_faculty');
+    //END OF FACULTY
+
+    //START OF TEACHER
+    Route::get('/teacher', [TeacherController::class, 'index'])->name('teacher');
+    Route::get('/createteacher', [TeacherController::class, 'list_teacher'])->name('createteacher');
+    Route::post('/add_teacher', [TeacherController::class, 'insertTeacher'])->name('addteacher');
+    Route::get('/edit_teacher/{id}', [TeacherController::class, 'edit_teacher'])->name('editteacher');
+    Route::put('/update_teacher/{id}', [TeacherController::class, 'update_teacher'])->name('updateteacher');
+    Route::get('/delete_teacher/{id}', [TeacherController::class, 'delete'])->name('deleteteacher');
+
+    //END OF TEACHER
+
 
 });
 

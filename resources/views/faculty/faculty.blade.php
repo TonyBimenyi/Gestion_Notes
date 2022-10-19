@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{asset('frontend/css/modal.css')}}">
 </head>
 <div class="container">
-    @include('layouts.top_row.cour')
+    @include('layouts.top_row.fac')
     <div class="table">
         <div class="table_content">
         <div class="search_row">
@@ -23,29 +23,20 @@
                 <thead>
                     <tr>
                         <th>#ID</th>
-                        <th>NAME COURSE</th>
-                        <th>CREDIT</th>
-                        <th>CLASS</th>
-                        <th>UNIT</th>
-                        <th>HOURLY VOLUME</th>
-                        <th>SPECIALISATION</th>
+                        <th>Name Faculty</th>
                         <th colspan="2">OPTIONS</th>
                     
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($course as $cours)   
+                    @foreach ($faculty as $Faculty)   
                    
                     <tr>
-                        <td>{{ $cours->id }}</td>
-                        <td>{{ $cours->code }}</td>
-                        <td>{{ $cours->name }}</td>
-                        <td>{{ $cours->semester }}</td>
-                        <td>{{ $cours->class }}</td>
-                        <td>{{ $cours->vh }}</td>
-                        <td>{{ $cours->id_spec }}</td>
-                        <td id="btn"><a href="{{ url('edit_course/'.$cours->id) }}"> <button  class="edit"><i class="fa-solid fa-pen-to-square"></i> Modifier</button></a></td>
-                        <td><a href="{{ url('delete_course/'.$cours->id) }}"> <button  id="delete"><i class="fa-solid fa-trash-can"></i> Supprimer</button></a></td>
+                        <td>{{ $Faculty->id }}</td>
+                        <td>{{ $Faculty->name }}</td>
+                        
+                        <td id="btn"><a href="{{ url('edit_faculty/'.$Faculty->id) }}"> <button  class="edit"><i class="fa-solid fa-pen-to-square"></i> Modifier</button></td>
+                        <td><a href="{{ url('delete_faculty/'.$Faculty->id) }}"> <button id="delete"><i class="fa-solid fa-trash-can"></i> Supprimer</button></td>
                     </tr>
                     @endforeach
                 </tbody>
