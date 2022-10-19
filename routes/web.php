@@ -7,7 +7,6 @@ use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\SpecialisationController;
 
 /*
