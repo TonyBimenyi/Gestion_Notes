@@ -15,7 +15,7 @@
         @include('layouts.top_row.tea')
         <div class="form">
             <h3 style="margin:10px 35px;color:var(--primary)">Add a Teacher</h3>
-            <form action="{{ url('add_teacher') }}" method="post">
+            <form action="{{ route('addteacher') }}" method="post">
                 @csrf
                 {{-- @method('PUT')  --}}
                 <div class="col">
