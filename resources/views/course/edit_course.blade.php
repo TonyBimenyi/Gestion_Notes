@@ -15,7 +15,7 @@
         @include('layouts.top_row.cour')
         <div class="form">
             <h3 style="margin:10px 35px;color:var(--primary)">Modify a Course</h3>
-            <form action="{{ url('update_course/'.$course->id) }}" method="post">
+            <form action="{{ route('updatecourse',['id'=>$course->id]) }}" method="post">
                 @csrf
                 @method('PUT')
                 <div class="col">

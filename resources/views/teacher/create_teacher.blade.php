@@ -15,7 +15,7 @@
         @include('layouts.top_row.tea')
         <div class="form">
             <h3 style="margin:10px 35px;color:var(--primary)">Add a Teacher</h3>
-            <form action="{{ url('add_teacher') }}" method="post">
+            <form action="{{ route('addteacher') }}" method="post">
                 @csrf
                 {{-- @method('PUT')  --}}
                 <div class="col">
@@ -29,7 +29,7 @@
                                     <i class="fa-solid fa-list-ol"></i>
                                 </div>
                                 <div class="input">
-                                    <input type="text" name="matricule" placeholder="matricule..." required>
+                                    <input type="text" name="matricule" readonly="" value="TE-{{$date}}/0{{$count}}" placeholder="matricule..." required>
                                 </div>
                             </div>
                         </div>
@@ -102,9 +102,9 @@
                                 <div class="select">
                                     <select name="course" id="state">
                                         <option value="" required >--Course---</option>
-                                        @foreach ($create_teacher as $course)
+                                        @foreach ($course as $cours)
                                             
-                                        <option value="{{ $course->id }}" required >{{ $course->name }}</option>
+                                        <option value="{{ $cours->id }}" required >{{ $cours->name }}</option>
 
                                         @endforeach
                                         

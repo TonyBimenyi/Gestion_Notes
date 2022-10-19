@@ -44,8 +44,8 @@
                     <td>{{$stu->class}}</td>
                     <td>{{$stu->specialisation->name}}</td>
                     <td>{{$stu->created_at}}</td>
-                    <td id="btn"> <button  class="edit"><i class="fa-solid fa-pen-to-square"></i> Edit</button></td>
-                    <td> <button  id="delete"><i class="fa-solid fa-trash-can"></i> Delete</button></td>
+                    <td id="btn"><a href="{{ route('students.edit',['id' => $stu->id])}}"> <button  class="edit"><i class="fa-solid fa-pen-to-square"></i> Edit</button></a></td>
+                    <td> <a href="{{ route('students.delete_student',['id' => $stu->id])}}">  <button id="delete"><i class="fa-solid fa-trash-can"></i> Delete</button></a></td>
                 </tbody>
                 @endforeach
             </table>

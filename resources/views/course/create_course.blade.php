@@ -15,7 +15,7 @@
         @include('layouts.top_row.cour')
         <div class="form">
             <h3 style="margin:10px 35px;color:var(--primary)">Add a Course</h3>
-            <form action="{{ url('add_course') }}" method="post">
+            <form action="{{ route('addcourse') }}" method="post">
                 @csrf
                 {{-- @method('PUT')  --}}
                 <div class="col">
@@ -29,7 +29,7 @@
                                     <i class="fa-solid fa-list-ol"></i>
                                 </div>
                                 <div class="input">
-                                    <input type="text" name="code" placeholder="Code..." required>
+                                    <input type="text" name="code" readonly="" value="BST-{{$date}}/0{{$count}}" placeholder="Code..." required>
                                 </div>
                             </div>
                         </div>
@@ -107,7 +107,7 @@
                                 <div class="select">
                                     <select name="specialisation" id="state">
                                         <option value="" required >--Specialisation---</option>
-                                        @foreach ($create_course as $spec)
+                                        @foreach ($specs as $spec)
                                             
                                         <option value="{{ $spec->id }}" required >{{ $spec->name }}</option>
 

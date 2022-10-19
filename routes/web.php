@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NoteController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\DashboardController;
@@ -40,7 +42,16 @@ Route::middleware(['auth',])->group(function(){
     //START STUDENT
     Route::get('/students', [StudentController::class, 'index'])->name('students');
     Route::get('/students/add', [StudentController::class, 'form_student'])->name('students.form');
-    
+
+    Route::post('/getSpec',[StudentController::class,'getSpec'])->name('students.getSpec');
+    Route::get('/getFac',[StudentController::class,'getFac'])->name('students.getFac');
+    Route::post('/students/create',[StudentController::class,'create_student'])->name('students.create');
+    Route::get('/students/edit/{id}',[StudentController::class,'edit_student'])->name('students.edit');
+    Route::put('/students/update/{id}',[StudentController::class,'update_student'])->name('students.update');
+    Route::get('/students/delete_student/{id}',[StudentController::class,'delete_student'])->name('students.delete_student');
+    Route::post('/students/remove_student/{id}',[StudentController::class,'remove_student'])->name('students.remove');
+
+
     //END STUDENT
 
 
@@ -62,6 +73,13 @@ Route::middleware(['auth',])->group(function(){
     Route::get('/delete_teacher/{id}', [TeacherController::class, 'delete'])->name('deleteteacher');
 
     //END OF TEACHER
+
+    //START NOTES
+    Route::get('/notes',[NoteController::class,'index'])->name('notes');
+
+    //END NOTES
+
+
 
 
     //START OF SPECIALIZATION
