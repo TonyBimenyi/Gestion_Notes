@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Note;
 use App\Models\Faculty;
 use App\Models\Specialisation;
 use Illuminate\Database\Eloquent\Model;
@@ -18,5 +19,8 @@ class Student extends Model
     public function faculty(){
       return  $this->belongsTo(Faculty::class,'spec_id');
    }
+   public function note(){
+    return $this->hasMany(Note::class,'id','id_student');
+}
   
 }

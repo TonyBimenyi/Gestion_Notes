@@ -15,4 +15,7 @@ class Course extends Model
     public function Specialisation(){
         return $this->HasMany();
     }
+    public function note(){
+        return $this->hasMany(Notes::class,'id','id_course');
+    }
 }

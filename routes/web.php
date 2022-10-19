@@ -73,6 +73,16 @@ Route::middleware(['auth',])->group(function(){
 
     //START NOTES
     Route::get('/notes',[NoteController::class,'index'])->name('notes');
+    Route::get('/add_notes',[NoteController::class,'add_notes'])->name('notes.add_notes');
+    Route::post('/getSpec',[NoteController::class,'getSpec'])->name('students.getSpec');
+    Route::get('/searchNote',[NoteController::class,'searchNote'])->name('notes.search');
+    Route::get('/placeNote',[NoteController::class,'placeNote'])->name('notes.place');
+    Route::get('/viewNote',[NoteController::class,'viewNote'])->name('notes.viewNote');
+    Route::get('/advanced_search',[NoteController::class,'advanced_search'])->name('notes.advanced_search');
+    Route::get('/average',[NoteController::class,'average'])->name('notes.average');
+    Route::get('/average_result',[NoteController::class,'average_result'])->name('notes.average_result');
+    Route::get('/advanced_search_result',[NoteController::class,'advanced_search_result'])->name('notes.advanced_search_result');
+    Route::get('/search_note_matricule',[NoteController::class,'searchNoteMatricule'])->name('notes.searchNoteMatricule');
 
     //END NOTES
 
@@ -81,4 +91,4 @@ Route::middleware(['auth',])->group(function(){
 
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class,'index'])->name('home');
