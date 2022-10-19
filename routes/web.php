@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NoteController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\FacultyController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -69,6 +70,13 @@ Route::middleware(['auth',])->group(function(){
     Route::get('/delete_teacher/{id}', [TeacherController::class, 'delete'])->name('deleteteacher');
 
     //END OF TEACHER
+
+    //START NOTES
+    Route::get('/notes',[NoteController::class,'index'])->name('notes');
+
+    //END NOTES
+
+
 
 
 });

@@ -48,7 +48,7 @@
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Users</a></li>
-          <li><a href="#">Teachers</a></li>
+          <li><a href="{{ route('teacher')}}">Teachers</a></li>
           <li><a href="{{ route('students')}}">Students</a></li>
         </ul>
       </li>
@@ -63,8 +63,8 @@
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Academic</a></li>
-          <li><a href="#">Faculties</a></li>
-          <li><a href="#">Specialisations</a></li>
+          <li><a href="{{ route('faculty')}}">Faculties</a></li>
+          <li><a href="">Specialisations</a></li>
         </ul>
       </li>
 
@@ -72,14 +72,14 @@
 
       <li>
         <div class="iocn-link">
-          <a href="#">
+          <a href="{{ route('course')}}">
           <i class="fa-solid fa-book-open"></i>
             <span class="link_name">Courses</span>
           </a>
           
         </div>
         <ul class="sub-menu">
-          <li><a class="link_name" href="#">Courses</a></li>
+          <li><a class="link_name" href="{{ route('course')}}">Courses</a></li>
 
         </ul>
       </li>
