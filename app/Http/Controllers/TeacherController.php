@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Course;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
@@ -19,9 +20,12 @@ class TeacherController extends Controller
 
     public function list_teacher()
     {
+        $date = Carbon::now()->format('Y');
+        $count = Course::count()+1;
         $course=Course::all();
 
-        return view('teacher.create_teacher',['create_teacher'=>$course]);
+       // return view('teacher.create_teacher',['create_teacher'=>$course]);
+        return view('teacher.create_teacher',compact('date','count','course'));
     }
 
     public function insertTeacher(Request $request)
