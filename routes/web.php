@@ -7,6 +7,8 @@ use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SpecialisationController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -79,6 +81,14 @@ Route::middleware(['auth',])->group(function(){
 
 
 
+    //START OF SPECIALIZATION
+    Route::get('/specialization', [SpecialisationController::class, 'index'])->name('specialisation');
+    Route::get('/createspecialization', [SpecialisationController::class, 'list_specs'])->name('createspecialization');
+    Route::post('/add_specialization', [SpecialisationController::class, 'add_specialization'])->name('add_specialization');
+    Route::get('/edit_specialization/{id}', [SpecialisationController::class, 'edit_specialization'])->name('edit_specialization');
+    Route::put('/update_specialization/{id}', [SpecialisationController::class, 'update_specialization'])->name('update_specialization');
+    Route::get('/delete_specialization/{id}', [SpecialisationController::class, 'delete_specialization'])->name('delete_specialization');
+    //END OF SPECIALIZATION
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
