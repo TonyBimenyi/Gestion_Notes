@@ -126,7 +126,7 @@
     <div class="home-content">
       <i class='bx bx-menu' ></i>
 
-      <span class="text">Notes Management System</span>
+      <span class="text">Marks Management System</span>
 
     </div>
     @yield('da')
