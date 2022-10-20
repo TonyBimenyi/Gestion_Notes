@@ -15,4 +15,7 @@ class Course extends Model
     public function specialisation(){
         return $this->belongsTo(related:Specialisation::class,foreignKey:'id_spec');
     }
+    public function note(){
+        return $this->hasMany(Notes::class,'id','id_course');
+    }
 }

@@ -98,8 +98,8 @@
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Notes</a></li>
-          <li><a href="#">View Notes</a></li>
-          <li><a href="#">Add Notes</a></li>
+          <li><a href="{{route('notes')}}">View Notes</a></li>
+          <li><a href="{{route('notes.add_notes')}}">Add Notes</a></li>
         
         </ul>
       </li>
