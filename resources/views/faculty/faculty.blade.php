@@ -14,7 +14,7 @@
 
             </div>
             <div class="search">
-                <input type="search" placeholder="Rechercher...">
+                {{-- <input type="search" placeholder="Rechercher..."> --}}
             </div>
         </div>
 
@@ -35,8 +35,8 @@
                         <td>{{ $Faculty->id }}</td>
                         <td>{{ $Faculty->name }}</td>
                         
-                        <td id="btn"><a href="{{ url('edit_faculty/'.$Faculty->id) }}"> <button  class="edit"><i class="fa-solid fa-pen-to-square"></i> Modifier</button></td>
-                        <td><a href="{{ url('delete_faculty/'.$Faculty->id) }}"> <button id="delete"><i class="fa-solid fa-trash-can"></i> Supprimer</button></td>
+                        <td id="btn"><a href="{{ url('edit_faculty/'.$Faculty->id) }}"> <button  class="edit"><i class="fa-solid fa-pen-to-square"></i> Edit</button></td>
+                        <td><a href="{{ url('delete_faculty/'.$Faculty->id) }}"> <button id="delete"><i class="fa-solid fa-trash-can"></i> Delete</button></td>
                     </tr>
                     @endforeach
                 </tbody>

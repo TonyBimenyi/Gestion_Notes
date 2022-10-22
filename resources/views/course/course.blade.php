@@ -14,7 +14,7 @@
 
             </div>
             <div class="search">
-                <input type="search" placeholder="Rechercher...">
+                {{-- <input type="search" placeholder="Rechercher..."> --}}
             </div>
         </div>
         @if ($course->count()>0)

@@ -41,7 +41,8 @@ class SpecialisationController extends Controller
          $facs = Faculty::get();
 
 
-        return view('specialization',['specialisation'=>$spec],['facs'=>$facs]);
+        return view('specialisation.edit_specialisation',['specialisation'=>$spec],['facs'=>$facs]);
+       // return view('specialisation.specialisation',compact('spec','facs'));
     }
 
     public function update_specialization(Request $request,$id)
